@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Product List</title>
+</head> 
+<body>
+    <div id="datashow">
+   </div>
+    <script src="http://localhost/MVCSstack/Scripts/jquery-1.10.2.min.js"></script>
+    <script>
+        $(function () {
+             var url = "http://localhost/MVCSstack/product?format=json";
+             $.getJSON(url, function (data)
+             {
+                 $.each(data.products, function (i, value)
+                 {
+                     $("#datashow").append("<ul><li>Id: " + JSON.stringify(value.Id) + "</li><li>Name: " + JSON.stringify(value.Name) + "</li><li>Description:" + JSON.stringify(value.Desc) + "</li><li>UnitPrice: " + JSON.stringify(value.UnitPrice) + "</li></ul>");
+                 });
+
+             });
+        });
+    </script>
+   
+</body>
+</html>

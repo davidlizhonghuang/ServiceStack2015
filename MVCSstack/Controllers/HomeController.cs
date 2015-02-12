@@ -8,8 +8,13 @@ namespace MVCSstack.Controllers
 {
     public class HomeController : Controller
     {
+
+        ProductService pdts = new ProductService();
+
         public ActionResult Index()
         {
+          
+
             return View();
         }
 
